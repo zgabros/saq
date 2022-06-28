@@ -6,6 +6,7 @@ import Comunidad from "./componentes/Comunidad";
 import Boletas from "./componentes/Boletas";
 import Perfil from "./componentes/Perfil";
 import { initializeApp } from "firebase/app";
+import ContenedorDetalleProcedimiento from "./componentes/boletasprocedimientos/procedimientos/ContenedorDetalleProcedimiento";
 
 function App() {
   const firebaseConfig = {
@@ -27,7 +28,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Procedimientos />} />
           <Route path="/Procedimientos" element={<Procedimientos />} />
-          <Route path="/Procedimientos/:id" element={<Procedimientos />} />
+          <Route
+            path="/Procedimientos/:id"
+            element={<ContenedorDetalleProcedimiento />}
+          />
           <Route path="/Boletas" element={<Boletas />} />
           <Route path="/Boletas/:id" element={<Boletas />} />
           <Route path="/Perfil" element={<Perfil />} />
