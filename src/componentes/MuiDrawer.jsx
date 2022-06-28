@@ -23,7 +23,11 @@ function MuiDrawer({ drOpen, setDrOpen }) {
       <Box>
         <List>
           <ListItem>
-            <ListItemButton component={Link} to="/Procedimientos">
+            <ListItemButton
+              component={Link}
+              to="/Procedimientos"
+              onClick={() => setDrOpen(false)}
+            >
               <ListItemIcon>
                 <AddCircleRounded />
               </ListItemIcon>
@@ -31,7 +35,11 @@ function MuiDrawer({ drOpen, setDrOpen }) {
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton component={Link} to="/Boletas">
+            <ListItemButton
+              component={Link}
+              to="/Boletas"
+              onClick={() => setDrOpen(false)}
+            >
               <ListItemIcon>
                 <AutoAwesomeMotionRounded />
               </ListItemIcon>
@@ -39,7 +47,11 @@ function MuiDrawer({ drOpen, setDrOpen }) {
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton component={Link} to="/Comunidad">
+            <ListItemButton
+              component={Link}
+              to="/Comunidad"
+              onClick={() => setDrOpen(false)}
+            >
               <ListItemIcon>
                 <ConnectWithoutContact />
               </ListItemIcon>
@@ -47,7 +59,11 @@ function MuiDrawer({ drOpen, setDrOpen }) {
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton component={Link} to="/Perfil">
+            <ListItemButton
+              component={Link}
+              to="/Perfil"
+              onClick={() => setDrOpen(false)}
+            >
               <ListItemIcon>
                 <AccountCircleRounded />
               </ListItemIcon>
