@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   Card,
   CardContent,
-  CardActionArea,
   Typography,
   CardActions,
   Button,
@@ -22,8 +23,10 @@ function ItemProcedimiento({ item }) {
         <Typography variant="body2">Institucion: {Institucion}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Detalles</Button>
-        <Button size="small">Agregar</Button>
+        <Button size="small" component={Link} to={`/Procedimientos/${id}`}>
+          Detalles
+        </Button>
+        <Button size="small">Agregar a boleta</Button>
         <Button size="small">Borrar</Button>
       </CardActions>
     </Card>
