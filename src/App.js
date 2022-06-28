@@ -5,8 +5,21 @@ import Procedimientos from "./componentes/Procedimientos";
 import Comunidad from "./componentes/Comunidad";
 import Boletas from "./componentes/Boletas";
 import Perfil from "./componentes/Perfil";
+import { initializeApp } from "firebase/app";
 
 function App() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyCoKPOo0r9jjHkflNDHuSIpBfIQ6xSj7Ks",
+    authDomain: "saq-app-a81e1.firebaseapp.com",
+    projectId: "saq-app-a81e1",
+    storageBucket: "saq-app-a81e1.appspot.com",
+    messagingSenderId: "397246895422",
+    appId: "1:397246895422:web:1e2b5ccdc5b8cc914c886f",
+  };
+
+  // Initialize Firebase
+  initializeApp(firebaseConfig);
+
   return (
     <div className="App">
       <BrowserRouter>

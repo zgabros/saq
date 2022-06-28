@@ -1,6 +1,6 @@
 import React from "react";
-import ContenedorBoletas from "./boletasprocedimientos/ContenedorBoletas";
-import CrearBoleta from "./boletasprocedimientos/CrearBoleta";
+import ContenedorBoletas from "./boletasprocedimientos/boletas/ContenedorBoletas";
+import CrearBoleta from "./boletasprocedimientos/boletas/CrearBoleta";
 
 function Boletas() {
   return (

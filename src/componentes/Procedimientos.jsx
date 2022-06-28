@@ -1,6 +1,6 @@
 import React from "react";
-import ContenedorProcedimientos from "./boletasprocedimientos/ContenedorProcedimientos";
-import CrearProcedimiento from "./boletasprocedimientos/CrearProcedimiento";
+import ContenedorProcedimientos from "./boletasprocedimientos/procedimientos/ContenedorProcedimientos";
+import CrearProcedimiento from "./boletasprocedimientos/procedimientos/CrearProcedimiento";
 
 function Procedimientos() {
   return (
