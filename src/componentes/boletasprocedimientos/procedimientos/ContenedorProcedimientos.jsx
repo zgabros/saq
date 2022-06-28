@@ -20,12 +20,7 @@ function ContenedorProcedimientos() {
       .finally(() => {});
   }, []);
 
-  return (
-    <article>
-      <div>ContenedorProcedimientos</div>
-      <Procedimiento procedimientos={procedimientos} />
-    </article>
-  );
+  return <Procedimiento procedimientos={procedimientos} />;
 }
 
 export default ContenedorProcedimientos;
