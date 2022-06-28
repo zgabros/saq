@@ -11,7 +11,7 @@ import {
 function ItemProcedimiento({ item }) {
   const { id, Nombre, Institucion, Fecha } = item;
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275 }} style={{ margin: "8px" }}>
       <CardContent>
         <Typography sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
           Id: {id}
@@ -22,6 +22,7 @@ function ItemProcedimiento({ item }) {
         <Typography variant="body2">Institucion: {Institucion}</Typography>
       </CardContent>
       <CardActions>
+        <Button size="small">Detalles</Button>
         <Button size="small">Agregar</Button>
         <Button size="small">Borrar</Button>
       </CardActions>

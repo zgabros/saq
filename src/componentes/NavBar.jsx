@@ -1,57 +1,45 @@
-import React from "react";
-import { BottomNavigation, BottomNavigationAction, Paper } from "@mui/material";
-import {
-  AccountCircleRounded,
-  AddCircleRounded,
-  AutoAwesomeMotionRounded,
-  ConnectWithoutContact,
-} from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import AddIcon from "@mui/icons-material/Add";
+import MenuIcon from "@mui/icons-material/Menu";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Fab from "@mui/material/Fab";
+import IconButton from "@mui/material/IconButton";
+import { styled } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import { useState } from "react";
+import MuiDrawer from "./MuiDrawer";
+
+const StyledFab = styled(Fab)({
+  position: "absolute",
+  zIndex: 1,
+  top: -30,
+  left: 0,
+  right: 0,
+  margin: "0 auto",
+});
 
 function NavBar() {
-  const [value, setValue] = React.useState("recents");
-
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
+  const [drOpen, setDrOpen] = useState(false);
 
   return (
-    <Paper
-      sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
-      elevation={4}
-    >
-      <BottomNavigation value={value} onChange={handleChange}>
-        <BottomNavigationAction
-          component={Link}
-          to="/Perfil"
-          label="Perfil"
-          value="perfil"
-          icon={<AccountCircleRounded />}
-        />
-        <BottomNavigationAction
-          component={Link}
-          to="/Procedimientos"
-          label="Procedimientos"
-          value="procedimientos"
-          icon={<AddCircleRounded />}
-        />
-        <BottomNavigationAction
-          component={Link}
-          to="/Boletas"
-          label="Boletas"
-          value="boletas"
-          icon={<AutoAwesomeMotionRounded />}
-        />
-        <BottomNavigationAction
-          component={Link}
-          to="/Comunidad"
-          label="Comunidad"
-          value="comunidad"
-          icon={<ConnectWithoutContact />}
-        />
-      </BottomNavigation>
-    </Paper>
+    <>
+      <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={() => setDrOpen(true)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <StyledFab color="secondary" aria-label="add">
+            <AddIcon />
+          </StyledFab>
+          <Box sx={{ flexGrow: 1 }} />
+        </Toolbar>
+      </AppBar>
+      <MuiDrawer drOpen={drOpen} setDrOpen={setDrOpen} />
+    </>
   );
 }
-
 export default NavBar;
