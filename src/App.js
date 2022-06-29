@@ -7,6 +7,7 @@ import Boletas from "./componentes/Boletas";
 import Perfil from "./componentes/Perfil";
 import { initializeApp } from "firebase/app";
 import ContenedorDetalleProcedimiento from "./componentes/boletasprocedimientos/procedimientos/ContenedorDetalleProcedimiento";
+import FormularioProcedimientos from "./componentes/FormularioProcedimientos/FormularioProcedimientos";
 
 function App() {
   const firebaseConfig = {
@@ -36,6 +37,10 @@ function App() {
           <Route path="/Boletas/:id" element={<Boletas />} />
           <Route path="/Perfil" element={<Perfil />} />
           <Route path="/Comunidad" element={<Comunidad />} />
+          <Route
+            path="/FormProcedimiento"
+            element={<FormularioProcedimientos />}
+          />
           <Route path="/*" element={<div>Error</div>} />
         </Routes>
       </BrowserRouter>

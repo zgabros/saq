@@ -8,6 +8,7 @@ import { styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import { useState } from "react";
 import MuiDrawer from "./MuiDrawer";
+import { Link } from "react-router-dom";
 
 const StyledFab = styled(Fab)({
   position: "absolute",
@@ -32,7 +33,12 @@ function NavBar() {
           >
             <MenuIcon />
           </IconButton>
-          <StyledFab color="secondary" aria-label="add">
+          <StyledFab
+            color="secondary"
+            aria-label="add"
+            component={Link}
+            to="/FormProcedimiento"
+          >
             <AddIcon />
           </StyledFab>
           <Box sx={{ flexGrow: 1 }} />
