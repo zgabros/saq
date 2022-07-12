@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 function ItemProcedimiento({ item }) {
-  const { id, Nombre, Institucion, Fecha } = item;
+  const { id, Nombre, Institucion, user } = item;
   return (
     <Card sx={{ minWidth: 275 }} style={{ margin: "8px" }}>
       <CardContent>
@@ -19,6 +19,9 @@ function ItemProcedimiento({ item }) {
         </Typography>
         <Typography variant="h7" component="div">
           Nombre: {Nombre}
+        </Typography>
+        <Typography variant="h7" component="div">
+          User: {user}
         </Typography>
         <Typography variant="body2">Institucion: {Institucion}</Typography>
       </CardContent>

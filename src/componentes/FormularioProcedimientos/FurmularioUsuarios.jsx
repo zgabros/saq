@@ -3,25 +3,23 @@ import { Field, Form, Formik, FormikProps } from "formik";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-function FormularioProcedimientos() {
+function FurmularioUsuarios() {
   const db = getFirestore();
-  const orderColl = collection(db, "procedimientos");
+  const orderColl = collection(db, "users");
   const navigate = useNavigate();
-
-  const user = "";
 
   return (
     <div>
       <h1>Agregar procedimiento</h1>
       <Formik
-        initialValues={{ Nombre: "", Institucion: "", user: user }}
+        initialValues={{ Nombre: "", Apellido: "" }}
         validate={(values) => {
           let errors = {};
           if (!values.Nombre) {
             errors.Nombre = "Requerido";
           }
-          if (!values.Institucion) {
-            errors.Institucion = "Requerido";
+          if (!values.Apellido) {
+            errors.Apellido = "Requerido";
           }
           return errors;
         }}
@@ -57,15 +55,15 @@ function FormularioProcedimientos() {
               {errors.Nombre && touched.Nombre && errors.Nombre}
             </div>
             <div>
-              <label>Intitucion</label>
+              <label>Apellido</label>
               <input
-                type="institucion"
-                name="Institucion"
+                type="apellido"
+                name="Apellido"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.Institucion}
+                value={values.Apellido}
               />
-              {errors.Institucion && touched.Institucion && errors.Institucion}
+              {errors.Apellido && touched.Apellido && errors.Apellido}
             </div>
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Enviando" : "Enviar"}
@@ -77,4 +75,4 @@ function FormularioProcedimientos() {
   );
 }
 
-export default FormularioProcedimientos;
+export default FurmularioUsuarios;
